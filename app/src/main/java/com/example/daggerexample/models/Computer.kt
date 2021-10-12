@@ -5,9 +5,9 @@ import javax.inject.Inject
 
 // Injecting constructor
 class Computer @Inject constructor(
-        val processor: Processor,
-        val display: Display,
-        val inputs: Inputs
+        private val processor: Processor,
+        private val display: Display,
+        private val inputs: Inputs
 ) {
     companion object {
         private const val TAG = "Computer"
