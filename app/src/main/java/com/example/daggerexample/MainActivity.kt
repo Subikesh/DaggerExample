@@ -5,16 +5,16 @@ import android.os.Bundle
 import com.example.daggerexample.models.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var computer: Computer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Hard dependencies created
-        val processor = Processor()
-        val display = Display()
-        val inputs = Inputs(Keyboard(), Mouse())
+        // DaggerComputerComponent class is created by dagger implementing ComputerComponent
+        val component: ComputerComponent = DaggerComputerComponent.create()
 
-        val computer = Computer(processor, display, inputs)
+        computer = component.getComputer()
         computer.startComputer()
     }
 }

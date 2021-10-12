@@ -1,8 +1,10 @@
 package com.example.daggerexample.models
 
 import android.util.Log
+import javax.inject.Inject
 
-class Computer(
+// Injecting constructor
+class Computer @Inject constructor(
         val processor: Processor,
         val display: Display,
         val inputs: Inputs

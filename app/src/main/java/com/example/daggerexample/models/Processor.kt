@@ -1,3 +1,5 @@
 package com.example.daggerexample.models
 
-class Processor
+import javax.inject.Inject
+
+class Processor @Inject constructor()

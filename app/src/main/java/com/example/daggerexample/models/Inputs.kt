@@ -1,6 +1,8 @@
 package com.example.daggerexample.models
 
-class Inputs(
+import javax.inject.Inject
+
+class Inputs @Inject constructor(
     val keyboard: Keyboard,
     val mouse: Mouse
 )

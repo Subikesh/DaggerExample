@@ -1,3 +1,5 @@
 package com.example.daggerexample.models
 
-class Keyboard
+import javax.inject.Inject
+
+class Keyboard @Inject constructor()
