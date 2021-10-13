@@ -4,15 +4,21 @@ import com.example.daggerexample.computer.Display
 import com.example.daggerexample.computer.LaptopDisplay
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import javax.inject.Named
 
 @Module
-abstract class LaptopDisplayModule {
+class LaptopDisplayModule(
+    @Named("resolution") private val resolution: String
+) {
 
-//    @Provides
-//    fun provideDisplay(): Display = LaptopDisplay()
+    // Named will let dagger differentiate which String is required from all fields of type String
+    // Generally done on primitive types
+    @Provides
+    @Named("resolution")
+    fun provideResolution(): String = resolution
 
-    // We can use Binds to directly return the Display using LaptopDisplay object
-    // Here binds has dependency on LaptopDisplay which is found by constructor injection
-    @Binds
-    abstract fun bindDisplay(display: LaptopDisplay): Display
+    // Getting inputs in runtime and providing LaptopDisplay class
+    @Provides
+    fun provideDisplay(display: LaptopDisplay): Display = display
 }
