@@ -1,5 +1,7 @@
-package com.example.daggerexample.models
+package com.example.daggerexample.dagger
 
+import com.example.daggerexample.computer.Display
+import com.example.daggerexample.computer.LaptopDisplay
 import dagger.Binds
 import dagger.Module
 

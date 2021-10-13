@@ -1,6 +1,7 @@
-package com.example.daggerexample.models
+package com.example.daggerexample.dagger
 
 import com.example.daggerexample.MainActivity
+import com.example.daggerexample.computer.Computer
 import dagger.Component
 
 // Creating component

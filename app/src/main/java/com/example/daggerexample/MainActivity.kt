@@ -2,7 +2,9 @@ package com.example.daggerexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.daggerexample.models.*
+import com.example.daggerexample.computer.Computer
+import com.example.daggerexample.dagger.ComputerComponent
+import com.example.daggerexample.dagger.DaggerComputerComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.daggerexample.models
+package com.example.daggerexample.computer
 
 import android.util.Log
 import javax.inject.Inject

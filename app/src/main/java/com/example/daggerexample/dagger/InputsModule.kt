@@ -1,6 +1,9 @@
-package com.example.daggerexample.models
+package com.example.daggerexample.dagger
 
 import android.util.Log
+import com.example.daggerexample.computer.Inputs
+import com.example.daggerexample.computer.Keyboard
+import com.example.daggerexample.computer.Mouse
 import dagger.Module
 import dagger.Provides
 

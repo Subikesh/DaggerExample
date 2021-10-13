@@ -1,4 +1,4 @@
-package com.example.daggerexample.models
+package com.example.daggerexample.computer
 
 import javax.inject.Inject
 
