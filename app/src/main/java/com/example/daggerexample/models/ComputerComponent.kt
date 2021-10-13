@@ -4,7 +4,7 @@ import com.example.daggerexample.MainActivity
 import dagger.Component
 
 // Creating component
-@Component(modules = [InputsModule::class])
+@Component(modules = [InputsModule::class, LaptopDisplayModule::class])
 interface ComputerComponent {
     fun getComputer(): Computer
 

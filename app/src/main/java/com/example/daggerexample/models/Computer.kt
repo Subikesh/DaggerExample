@@ -14,6 +14,8 @@ class Computer @Inject constructor(
     }
     
     fun startComputer() {
+        // Calling the function from corresponding display class
+        display.start()
         Log.i(TAG, "Computer started and running.")
     }
 }
