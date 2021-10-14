@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Instead of sending the display module, we can send just the resolution string
         val component: ComputerComponent = DaggerComputerComponent.builder()
-            .laptopDisplayModule(LaptopDisplayModule("FHD"))
+            .resolution("UHD")
             .build()
 
         // Injecting all the annotated fields of 'this' class using field injection

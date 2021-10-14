@@ -8,9 +8,7 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class LaptopDisplayModule(
-    @Named("resolution") private val resolution: String
-) {
+class LaptopDisplayModule(private val resolution: String) {
 
     // Named will let dagger differentiate which String is required from all fields of type String
     // Generally done on primitive types
