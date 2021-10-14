@@ -1,11 +1,10 @@
 package com.example.daggerexample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.daggerexample.computer.Computer
 import com.example.daggerexample.dagger.ComputerComponent
 import com.example.daggerexample.dagger.DaggerComputerComponent
-import com.example.daggerexample.dagger.LaptopDisplayModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component: ComputerComponent = DaggerComputerComponent.builder()
-            .resolution("UHD")
-            .build()
+        // Getting the component from application class
+        val component: ComputerComponent = (application as MyApplication).component
 
         component.inject(this)
 
