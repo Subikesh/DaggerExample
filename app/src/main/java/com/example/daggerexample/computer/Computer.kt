@@ -1,8 +1,11 @@
 package com.example.daggerexample.computer
 
 import android.util.Log
+import com.example.daggerexample.dagger.ActivityScope
 import javax.inject.Inject
 
+// Computer has activity scope. So if activity is destroyed, the object is also destroyed
+@ActivityScope
 class Computer @Inject constructor(
     private val powerSupply: PowerSupply,
     private val processor: Processor,

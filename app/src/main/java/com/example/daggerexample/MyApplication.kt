@@ -1,19 +1,17 @@
 package com.example.daggerexample
 
 import android.app.Application
-import com.example.daggerexample.dagger.ComputerComponent
-import com.example.daggerexample.dagger.DaggerComputerComponent
+import com.example.daggerexample.dagger.AppComponent
+import com.example.daggerexample.dagger.DaggerAppComponent
 
-// This is the application class which stores App Component
 class MyApplication : Application() {
-    lateinit var component: ComputerComponent
+    lateinit var component: AppComponent
         private set
 
     override fun onCreate() {
         super.onCreate()
 
-        component = DaggerComputerComponent.builder()
-            .resolution("UHD")
-            .build()
+        // Storing Application component
+        component = DaggerAppComponent.create()
     }
 }
