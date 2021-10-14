@@ -5,8 +5,11 @@ import com.example.daggerexample.computer.Computer
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
-// Creating component
+// Since the powerSupply is singleton, the component must also be singleton
+// Singleton can be annotated on Provides and Binds also
+@Singleton
 @Component(modules = [InputsModule::class, MonitorDisplayModule::class])
 interface ComputerComponent {
     fun getComputer(): Computer
