@@ -18,15 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Getting the subcomponent from component class
-//        val component: ActivityComponent =
-//            (application as MyApplication).component.getActivityComponent(LaptopDisplayModule("FHD+"))
-
-        // Getting the subcomponent builder and passing resolution ourself
+        // sending arguments through component factory
         val component: ActivityComponent =
-            (application as MyApplication).component.getActivityComponentBuilder()
-                .resolution("FHD+")
-                .build()
+            (application as MyApplication).component.getActivityComponentFactory()
+                .create(resolution = "FHD+")
 
         component.inject(this)
 

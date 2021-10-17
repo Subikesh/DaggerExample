@@ -8,11 +8,5 @@ import javax.inject.Singleton
 @Singleton
 @Component
 interface AppComponent {
-    // Returns the activity component if there is no custom component builder
-//    fun getActivityComponent(laptopDisplayModule: LaptopDisplayModule): ActivityComponent
-
-    // Returns the subcomponent builder so the component can by built from calling class
-    fun getActivityComponentBuilder(): ActivityComponent.Builder
+    fun getActivityComponentFactory(): ActivityComponent.Factory
 }
-
-// Generally AppComponent returns the retrofit instance from the AppModule

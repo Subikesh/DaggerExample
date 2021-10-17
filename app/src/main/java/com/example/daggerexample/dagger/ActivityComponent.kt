@@ -14,11 +14,12 @@ import javax.inject.Singleton
 interface ActivityComponent {
     fun inject(activity: MainActivity)
 
-    @Subcomponent.Builder
-    interface Builder {
-        @BindsInstance
-        fun resolution(@Named("resolution") resolution: String): Builder
-
-        fun build(): ActivityComponent
+    // Factory class created which has a function which accepts resolution string
+    // and returns Component instance
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(
+            @BindsInstance @Named("resolution") resolution: String
+        ) : ActivityComponent
     }
 }
